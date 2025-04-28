@@ -59,7 +59,7 @@ const App = () => {
     datasets: [
       {
         label: 'BTC Price',
-        data: [11000, 11200, 11100, 11400, 11300, 11459],
+        data: [411000, 411200, 411100, 411400, 411300, 411459],
         fill: false,
         borderColor: '#3f51b5',
       },
@@ -122,33 +122,29 @@ const App = () => {
             <Tab label="Vault" />
           </Tabs>
           <Grid container spacing={2} sx={{ mt: 2 }}>
-            <Grid item xs={12} md={8}>
+            <Grid item size={{ xs: 12, sm: 6 }}>
               <Paper elevation={3} sx={{ p: 2 }}>
                 <Typography variant="h4">$411,446.31 <Typography variant="caption" color="green">+0.97%</Typography></Typography>
                 <Line data={data} />
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 3 }}>
                   <Typography>Market Cap: $212.2B</Typography>
                   <Typography>Volume (24h): $19.8B</Typography>
                   <Typography>Circulating Supply: 18.5M BTC</Typography>
                 </Box>
               </Paper>
-              <Paper elevation={3} sx={{ p: 2, mt: 2 }}>
+              <Paper elevation={6} sx={{ p: 2, mt: 2 }}>
                 <Typography variant="h6">About Bitcoin</Typography>
                 <Typography variant="body2" sx={{ mt: 1 }}>
                   The world’s first cryptocurrency, Bitcoin is stored and exchanged securely on the internet through a digital ledger known as a blockchain.
                 </Typography>
-                <Box sx={{ mt: 2 }}>
-                  <Button size="small">Official website</Button>
-                  <Button size="small">Whitepaper</Button>
-                </Box>
               </Paper>
             </Grid>
-            <Grid size={{xs:6,md:4}} >
+            <Grid size={{xs:6,sm:6}} >
               <Paper elevation={3} sx={{ p: 2 }}>
                 <Typography variant="h6">Price correlation with</Typography>
-                <Divider sx={{ my: 2 }} />
+                <Divider sx={{ my: 1 }} />
                 {priceCorrelation.map((coin, index) => (
-                  <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', my: 3 }}>
+                  <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', my: 2 }}>
                     <Typography>{coin.name}</Typography>
                     <Typography>{coin.price} ({coin.correlation})</Typography>
                   </Box>
